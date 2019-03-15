@@ -6,6 +6,7 @@ namespace App;
 // use Laravel\Lumen\Auth\Authorizable;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 // use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 // use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 
@@ -18,9 +19,22 @@ class Student extends Model
      *
      * @var array
      */
-    protected $table = 'student';
+    protected $table = 'students';
+    // protected $dates = [
+    //     'bornDate'
+    // ];
+    protected $attributes = [
+        'nisn' => '',
+        'email' => '',
+        'firstName' => '',
+        'lastName' => '',
+        'fullName' => '',
+        'gender' => '',
+        'bornDate' => '1997-10-10',
+        'address' => '',
+     ];
     protected $fillable = [
-        'id', 'nisn', 'email', 'firstName', 'lastName', 'fullName', 'gender', 'bornDate', 'address'
+        'nisn', 'email', 'firstName', 'lastName', 'fullName', 'gender', 'bornDate', 'address'
     ];
 
     /**
